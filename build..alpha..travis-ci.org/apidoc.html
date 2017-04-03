@@ -1,0 +1,424 @@
+<div class="apidocDiv">
+<style>
+/*csslint
+*/
+.apidocDiv {
+    background: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.apidocDiv a[href] {
+    color: #33f;
+    font-weight: bold;
+    text-decoration: none;
+}
+.apidocDiv a[href]:hover {
+    text-decoration: underline;
+}
+.apidocCodeCommentSpan {
+    background: #bbf;
+    color: #000;
+    display: block;
+}
+.apidocCodeKeywordSpan {
+    color: #d00;
+    font-weight: bold;
+}
+.apidocCodePre {
+    background: #eef;
+    border: 1px solid;
+    color: #777;
+    padding: 5px;
+    white-space: pre-wrap;
+}
+.apidocFooterDiv {
+    margin-top: 20px;
+    text-align: center;
+}
+.apidocModuleLi {
+    margin-top: 10px;
+}
+.apidocSectionDiv {
+    border-top: 1px solid;
+    margin-top: 20px;
+}
+.apidocSignatureSpan {
+    color: #777;
+    font-weight: bold;
+}
+</style>
+<h1>api documentation for
+    <a
+
+        href="https://github.com/flosse/sloc#readme"
+
+    >sloc (v0.2.0)</a>
+</h1>
+<h4>sloc is a simple tool to count SLOC (source lines of code)</h4>
+<div class="apidocSectionDiv"><a
+    href="#apidoc.tableOfContents"
+    id="apidoc.tableOfContents"
+><h1>table of contents</h1></a><ol>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.sloc">module sloc</a><ol>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">sloc.</span>extensions</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">sloc.</span>formatters</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">sloc.</span>helpers</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">sloc.</span>keys</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.sloc.formatters">module sloc.formatters</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.sloc.formatters.cli-table">
+            function <span class="apidocSignatureSpan">sloc.formatters.</span>cli-table
+            <span class="apidocSignatureSpan">(data, options, fmtOpts)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.sloc.formatters.csv">
+            function <span class="apidocSignatureSpan">sloc.formatters.</span>csv
+            <span class="apidocSignatureSpan">(data, options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.sloc.formatters.json">
+            function <span class="apidocSignatureSpan">sloc.formatters.</span>json
+            <span class="apidocSignatureSpan">(res, options, fmtOpts)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.sloc.formatters.simple">
+            function <span class="apidocSignatureSpan">sloc.formatters.</span>simple
+            <span class="apidocSignatureSpan">(data, options, fmtOpts)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.sloc.helpers">module sloc.helpers</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.sloc.helpers.alignRight">
+            function <span class="apidocSignatureSpan">sloc.helpers.</span>alignRight
+            <span class="apidocSignatureSpan">(string, width)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.sloc.helpers.summarize">
+            function <span class="apidocSignatureSpan">sloc.helpers.</span>summarize
+            <span class="apidocSignatureSpan">(fileStats)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+</ol></div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.sloc" id="apidoc.module.sloc">module sloc</a></h1>
+
+
+
+
+
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.sloc.formatters" id="apidoc.module.sloc.formatters">module sloc.formatters</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.sloc.formatters.cli-table" id="apidoc.element.sloc.formatters.cli-table">
+        function <span class="apidocSignatureSpan">sloc.formatters.</span>cli-table
+        <span class="apidocSignatureSpan">(data, options, fmtOpts)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">cli-table = function (data, options, fmtOpts) {
+  var d, ext, f, head, heads, i, k, keys, len, ref, ref1, s, statToArray, table;
+  keys = options.keys || sloc.keys;
+  heads = options.details ? [&#x27;Path&#x27;].concat(slice.call(keys)) : [&#x27;Extension&#x27;].concat(slice.call(keys));
+  head = indexOf.call(fmtOpts, &#x27;no-head&#x27;) &#x3e;= 0 ? [] : (function() {
+    var i, len, results;
+    results = [];
+    for (i = 0, len = heads.length; i &#x3c; len; i++) {
+      k = heads[i];
+      results.push(i18n.en[k]);
+    }
+    return results;
+  })();
+  table = new Table({
+    head: head
+  });
+  statToArray = function(d) {
+    var i, len, results;
+    results = [];
+    for (i = 0, len = keys.length; i &#x3c; len; i++) {
+      k = keys[i];
+      results.push(d[k]);
+    }
+    return results;
+  };
+  if (options.details) {
+    ref = data.files;
+    for (i = 0, len = ref.length; i &#x3c; len; i++) {
+      f = ref[i];
+      table.push([f.path].concat(slice.call(statToArray(f.stats))));
+    }
+  } else if ((s = data.summary) != null) {
+    table.push([&#x27;- Total -&#x27;].concat(slice.call(statToArray(s))));
+    ref1 = data.byExt;
+    for (ext in ref1) {
+      d = ref1[ext];
+      if ((s = d.summary) != null) {
+        table.push([ext].concat(slice.call(statToArray(s))));
+      }
+    }
+  }
+  return table.toString();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.sloc.formatters.csv" id="apidoc.element.sloc.formatters.csv">
+        function <span class="apidocSignatureSpan">sloc.formatters.</span>csv
+        <span class="apidocSignatureSpan">(data, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">csv = function (data, options) {
+  var f, i, k, len, lineize, lines, ref, s;
+  if (options == null) {
+    options = {};
+  }
+  if (data == null) {
+    return console.error(&#x22;Error: missing data&#x22;);
+  }
+  lines = i18n.en.Path + &#x22;,&#x22; + (((function() {
+    var i, len, ref, results;
+    ref = sloc.keys;
+    results = [];
+    for (i = 0, len = ref.length; i &#x3c; len; i++) {
+      k = ref[i];
+      results.push(i18n.en[k]);
+    }
+    return results;
+  })()).join(&#x27;,&#x27;)) + &#x22;\n&#x22;;
+  lineize = function(t) {
+    return ((function() {
+      var i, len, ref, results;
+      ref = sloc.keys;
+      results = [];
+      for (i = 0, len = ref.length; i &#x3c; len; i++) {
+        k = ref[i];
+        results.push(t[k]);
+      }
+      return results;
+    })()).join(&#x27;,&#x27;);
+  };
+  if (options.details) {
+    ref = data.files;
+    for (i = 0, len = ref.length; i &#x3c; len; i++) {
+      f = ref[i];
+      if (f.stats != null) {
+        lines += f.path + &#x22;,&#x22; + (lineize(f.stats)) + &#x22;\n&#x22;;
+      }
+    }
+  } else if ((s = data.summary) != null) {
+    lines += i18n.en.Total + &#x27;,&#x27; + lineize(s);
+  }
+  if (lines[lines.length - 1] === &#x27;\n&#x27;) {
+    lines = lines.slice(0, -1);
+  }
+  return lines;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.sloc.formatters.json" id="apidoc.element.sloc.formatters.json">
+        function <span class="apidocSignatureSpan">sloc.formatters.</span>json
+        <span class="apidocSignatureSpan">(res, options, fmtOpts)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">json = function (res, options, fmtOpts) {
+  return JSON.stringify(res, null, (indexOf.call(fmtOpts, &#x27;no-indent&#x27;) &#x3e;= 0 ? 0 : 2));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.sloc.formatters.simple" id="apidoc.element.sloc.formatters.simple">
+        function <span class="apidocSignatureSpan">sloc.formatters.</span>simple
+        <span class="apidocSignatureSpan">(data, options, fmtOpts)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">simple = function (data, options, fmtOpts) {
+  var badFiles, bl, d, f, fileCount, result;
+  if (options == null) {
+    options = {};
+  }
+  if (options.keys == null) {
+    options.keys = sloc.keys;
+  }
+  result = &#x22;\n---------- &#x22; + i18n.en.Result + &#x22; ------------\n\n&#x22;;
+  result += stat({
+    stats: data.summary
+  }, options);
+  badFiles = data.files.filter(function(x) {
+    return x.badFile;
+  });
+  fileCount = data.files.length - badFiles.length;
+  result += &#x22;\n\n&#x22; + i18n.en.NumberOfFilesRead + &#x22; :  &#x22; + fileCount;
+  if (bl = badFiles.length &#x3e; 0) {
+    result += &#x22;\n&#x22; + (align(i18n.en.BrokenFiles, col)) + &#x22; :  &#x22; + (String(badFiles.length).red);
+  }
+  if (options.details &#x26;&#x26; data.files.length &#x3e; 1) {
+    result += &#x22;\n\n---------- &#x22; + i18n.en.Details + &#x22; -----------\n&#x22;;
+    d = (function() {
+      var j, len, ref, results;
+      ref = data.files;
+      results = [];
+      for (j = 0, len = ref.length; j &#x3c; len; j++) {
+        f = ref[j];
+        results.push(&#x22;\n\n--- &#x22; + f.path + &#x22;\n\n&#x22; + (stat(f, options)));
+      }
+      return results;
+    })();
+    result += d.join(&#x27;&#x27;);
+  }
+  return result += &#x22;\n\n------------------------------\n&#x22;;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.sloc.helpers" id="apidoc.module.sloc.helpers">module sloc.helpers</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.sloc.helpers.alignRight" id="apidoc.element.sloc.helpers.alignRight">
+        function <span class="apidocSignatureSpan">sloc.helpers.</span>alignRight
+        <span class="apidocSignatureSpan">(string, width)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">alignRight = function (string, width) {
+  if (string == null) {
+    string = &#x27;&#x27;;
+  }
+  if (width == null) {
+    width = 0;
+  }
+  if (!(typeof string === &#x27;string&#x27; &#x26;&#x26; typeof width === &#x27;number&#x27; &#x26;&#x26; width &#x3e;= 0)) {
+    return &#x27;&#x27;;
+  }
+  if (string.length &#x3e;= width) {
+    return string.slice(-width);
+  } else {
+    return Array(width - string.length + 1).join(&#x27; &#x27;) + string;
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.sloc.helpers.summarize" id="apidoc.element.sloc.helpers.summarize">
+        function <span class="apidocSignatureSpan">sloc.helpers.</span>summarize
+        <span class="apidocSignatureSpan">(fileStats)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">summarize = function (fileStats) {
+  if (!(Array.isArray(fileStats) &#x26;&#x26; fileStats.length &#x3e; 0)) {
+    return {};
+  }
+  return fileStats.reduce(function(a, b) {
+    var i, k, len, o, ref, v, x;
+    o = {};
+    ref = [a, b];
+    for (i = 0, len = ref.length; i &#x3c; len; i++) {
+      x = ref[i];
+      if (x != null) {
+        for (k in x) {
+          v = x[k];
+          if (!(typeof v === &#x22;number&#x22;)) {
+            continue;
+          }
+          if (o[k] == null) {
+            o[k] = 0;
+          }
+          o[k] += v;
+        }
+      }
+    }
+    return o;
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocFooterDiv">
+    [ this document was created with
+    <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a>
+    ]
+</div>
+</div>

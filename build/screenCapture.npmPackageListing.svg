@@ -1,20 +1,20 @@
 <svg height="270" width="720" xmlns="http://www.w3.org/2000/svg">
 <rect height="270" fill="#555" width="720"></rect>
 <text fill="#7f7" font-family="Courier New" font-size="12" xml:space="preserve">
-<tspan x="10" y="26">  0.  2017-04-18 20:36:46 +0000    38269 bytes  .</tspan>
-<tspan x="10" y="42">  1.  2017-04-18 20:36:46 +0000     2044 bytes  CHANGELOG.md</tspan>
-<tspan x="10" y="58">  2.  2017-04-18 20:36:46 +0000     1107 bytes  LICENCE.txt</tspan>
-<tspan x="10" y="74">  3.  2017-04-18 20:36:46 +0000     6948 bytes  README.md</tspan>
-<tspan x="10" y="90">  4.  2017-04-18 20:36:46 +0000      177 bytes  bin/sloc</tspan>
-<tspan x="10" y="106">  5.  2017-04-18 20:36:46 +0000     5722 bytes  lib/cli.js</tspan>
-<tspan x="10" y="122">  6.  2017-04-18 20:36:46 +0000      271 bytes  lib/formatters.js</tspan>
-<tspan x="10" y="138">  7.  2017-04-18 20:36:46 +0000     1758 bytes  lib/formatters/cli-table.js</tspan>
-<tspan x="10" y="154">  8.  2017-04-18 20:36:46 +0000     1476 bytes  lib/formatters/csv.js</tspan>
-<tspan x="10" y="170">  9.  2017-04-18 20:36:46 +0000      369 bytes  lib/formatters/json.js</tspan>
-<tspan x="10" y="186"> 10.  2017-04-18 20:36:46 +0000     2194 bytes  lib/formatters/simple.js</tspan>
-<tspan x="10" y="202"> 11.  2017-04-18 20:36:46 +0000     1197 bytes  lib/helpers.js</tspan>
-<tspan x="10" y="218"> 12.  2017-04-18 20:36:46 +0000      728 bytes  lib/i18n.js</tspan>
-<tspan x="10" y="234"> 13.  2017-04-18 20:36:46 +0000    11148 bytes  lib/sloc.js</tspan>
-<tspan x="10" y="250"> 14.  2017-04-18 20:36:46 +0000     3130 bytes  package.json</tspan>
+<tspan x="10" y="26">  0.  2017-04-18 20:37:49 +0000    38269 bytes  .</tspan>
+<tspan x="10" y="42">  1.  2017-04-18 20:37:49 +0000     2044 bytes  CHANGELOG.md</tspan>
+<tspan x="10" y="58">  2.  2017-04-18 20:37:49 +0000     1107 bytes  LICENCE.txt</tspan>
+<tspan x="10" y="74">  3.  2017-04-18 20:37:49 +0000     6948 bytes  README.md</tspan>
+<tspan x="10" y="90">  4.  2017-04-18 20:37:49 +0000      177 bytes  bin/sloc</tspan>
+<tspan x="10" y="106">  5.  2017-04-18 20:37:49 +0000     5722 bytes  lib/cli.js</tspan>
+<tspan x="10" y="122">  6.  2017-04-18 20:37:49 +0000      271 bytes  lib/formatters.js</tspan>
+<tspan x="10" y="138">  7.  2017-04-18 20:37:49 +0000     1758 bytes  lib/formatters/cli-table.js</tspan>
+<tspan x="10" y="154">  8.  2017-04-18 20:37:49 +0000     1476 bytes  lib/formatters/csv.js</tspan>
+<tspan x="10" y="170">  9.  2017-04-18 20:37:49 +0000      369 bytes  lib/formatters/json.js</tspan>
+<tspan x="10" y="186"> 10.  2017-04-18 20:37:49 +0000     2194 bytes  lib/formatters/simple.js</tspan>
+<tspan x="10" y="202"> 11.  2017-04-18 20:37:49 +0000     1197 bytes  lib/helpers.js</tspan>
+<tspan x="10" y="218"> 12.  2017-04-18 20:37:49 +0000      728 bytes  lib/i18n.js</tspan>
+<tspan x="10" y="234"> 13.  2017-04-18 20:37:49 +0000    11148 bytes  lib/sloc.js</tspan>
+<tspan x="10" y="250"> 14.  2017-04-18 20:37:49 +0000     3130 bytes  package.json</tspan>
 </text>
 </svg>
